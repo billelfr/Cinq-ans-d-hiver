@@ -1,0 +1,896 @@
+:root {
+    color-scheme: dark;
+    --bg: #070b12;
+    --bg-deep: #02070d;
+    --bg-panel: rgba(10, 15, 22, 0.92);
+    --line: rgba(255, 255, 255, 0.07);
+    --line-soft: rgba(255, 255, 255, 0.04);
+    --text: #e6dfd4;
+    --muted: rgba(230, 223, 212, 0.74);
+    --muted-soft: rgba(142, 150, 161, 0.82);
+    --accent: #8b2a39;
+    --accent-soft: rgba(139, 42, 57, 0.25);
+    --shadow: rgba(0, 0, 0, 0.72);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(16px);
+    background: rgba(7, 11, 18, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+}
+
+.brand-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-height: 48px;
+}
+
+.brand-sub {
+    font-size: 0.48rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.72);
+    font-weight: 300;
+}
+
+.nav-shell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.8rem;
+}
+
+.language-switch {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(246, 240, 234, 0.9);
+    width: 42px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.language-switch:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 3rem);
+    text-transform: uppercase;
+    font-size: 0.64rem;
+    letter-spacing: 0.45em;
+    color: rgba(230, 223, 212, 0.75);
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.2rem 0;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: rgba(230, 223, 212, 0.9);
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    position: relative;
+    width: 42px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle span {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 1.6px;
+    background: rgba(243, 240, 235, 0.9);
+    border-radius: 999px;
+    transform: translateX(-50%);
+    transition: transform 0.22s ease, opacity 0.22s ease, top 0.22s ease;
+    transform-origin: center;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 17px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 24px;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+    top: 17px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    top: 17px;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(7, 11, 18, 0.98), rgba(5, 9, 15, 0.96));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 18%, rgba(52, 67, 95, 0.22), transparent 30%),
+        radial-gradient(circle at 25% 75%, rgba(60, 70, 90, 0.08), transparent 24%);
+    pointer-events: none;
+}
+
+.hero-row {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 6rem);
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.hero-copy {
+    max-width: 590px;
+}
+
+.eyebrow,
+.section-kicker,
+.poem-tag,
+.small-label {
+    display: inline-block;
+    font-size: 0.58rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.68);
+    font-weight: 300;
+}
+
+.hero-copy h1 {
+    margin: 0.8rem 0 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 5.5vw, 7rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #f2eee7;
+}
+
+.title-sub {
+    margin: 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.78);
+    font-weight: 300;
+}
+
+.hero-quote {
+    margin: 2.1rem 0 1.5rem;
+    padding-left: 1.4rem;
+    border-left: 1px solid rgba(139, 42, 57, 0.42);
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(242, 236, 228, 0.9);
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+    max-width: 600px;
+}
+
+.lead {
+    max-width: 540px;
+    margin: 0;
+    color: rgba(230, 223, 212, 0.8);
+    font-size: 0.96rem;
+    line-height: 1.75;
+    font-weight: 300;
+}
+
+.cta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 1.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    transition: all 0.25s ease;
+}
+
+.button-primary {
+    background: rgba(255, 255, 255, 0.01);
+    color: #f7f1e8;
+}
+
+.button-primary:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.button-ghost {
+    color: rgba(230, 223, 212, 0.8);
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.button-ghost:hover {
+    color: #fff;
+}
+
+.hero-art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-scene {
+    position: relative;
+    width: min(460px, 100%);
+    padding: 0.8rem 0.4rem 0.3rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+    box-shadow: 0 25px 50px -18px rgba(0, 0, 0, 0.85);
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.book-caption {
+    margin-top: 1.1rem;
+    text-align: center;
+    color: rgba(230, 223, 212, 0.9);
+}
+
+.book-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #f7f3eb;
+}
+
+.book-edition {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.64);
+}
+
+.bio-section,
+.work-section,
+.poem-section,
+.contact-section {
+    background: rgba(6, 10, 15, 0.96);
+}
+
+.bio-section,
+.work-section {
+    padding-top: 5.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.bio-wrap,
+.work-wrap,
+.poem-wrap,
+.contact-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.6rem;
+}
+
+.section-heading h2 {
+    margin: 0.8rem 0 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 400;
+    color: #f3f1ee;
+    line-height: 1;
+}
+
+.divider {
+    width: 62px;
+    height: 1px;
+    background: rgba(139, 42, 57, 0.72);
+    margin: 1.3rem auto 0;
+}
+
+.bio-copy {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.3rem;
+    color: rgba(230, 223, 212, 0.78);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.bio-copy p {
+    margin: 0;
+}
+
+.bio-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(230, 223, 212, 0.7);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.quote-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: rgba(242, 236, 228, 0.9);
+}
+
+.featured-book-card {
+    display: grid;
+    grid-template-columns: 1.08fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background: rgba(11, 16, 24, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: clamp(1.2rem, 2vw, 2rem);
+}
+
+.feature-image-box {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.feature-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-header {
+    margin-bottom: 0.8rem;
+}
+
+.meta-tag {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(200, 91, 106, 0.95);
+}
+
+.feature-header h3 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1;
+    color: #f7f2eb;
+}
+
+.feature-header p {
+    margin: 0.4rem 0 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: rgba(230, 223, 212, 0.7);
+}
+
+.feature-quote {
+    margin: 1.2rem 0 1.4rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(230, 223, 212, 0.82);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.book-meta-list {
+    list-style: none;
+    padding: 1rem 0 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.book-meta-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.72);
+}
+
+.book-meta-list strong {
+    font-weight: 400;
+    color: rgba(247, 244, 240, 0.9);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    text-align: right;
+}
+
+.feature-cta {
+    margin-top: 1.6rem;
+}
+
+.feature-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.95rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.64rem;
+    color: #f6f0ea;
+}
+
+.poem-section {
+    position: relative;
+    padding: 5rem 0 5.3rem;
+    background: linear-gradient(180deg, rgba(6, 9, 14, 0.97), rgba(5, 7, 12, 0.98));
+}
+
+.poem-wrap {
+    max-width: 760px;
+    text-align: center;
+}
+
+.poem-tag {
+    display: inline-block;
+    margin-bottom: 1.7rem;
+    color: rgba(200, 91, 106, 0.9);
+}
+
+.poem-text {
+    margin: 0;
+    color: #f0ebdf;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poem-text p {
+    margin: 0;
+}
+
+.poem-cite {
+    display: block;
+    margin-top: 1.6rem;
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.7);
+}
+
+.poem-cite span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: rgba(242, 236, 228, 0.9);
+}
+
+.contact-section {
+    padding: 4.5rem 0 5.2rem;
+    text-align: center;
+}
+
+.contact-wrap {
+    max-width: 760px;
+}
+
+.contact-wrap h2 {
+    margin: 0.8rem 0 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 400;
+    color: #f3f0eb;
+}
+
+.contact-wrap p {
+    margin: 0 auto;
+    max-width: 620px;
+    color: rgba(230, 223, 212, 0.76);
+    font-size: 0.96rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.mail-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(139, 42, 57, 0.88);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+    font-style: italic;
+    color: rgba(246, 240, 233, 0.95);
+}
+
+.contact-note {
+    margin-top: 2.5rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.58);
+}
+
+.site-footer {
+    background: rgba(6, 9, 14, 1);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 2rem 0 2.5rem;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(246, 240, 233, 0.95);
+}
+
+.footer-role {
+    font-size: 0.52rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.7);
+}
+
+.copyright,
+.to-top {
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(230, 223, 212, 0.7);
+}
+
+.to-top {
+    transition: color 0.2s ease;
+}
+
+.to-top:hover {
+    color: #fff;
+}
+
+@media (max-width: 920px) {
+    .topbar {
+        min-height: 72px;
+        padding: 0.7rem 0;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .brand-block {
+        min-height: 0;
+        gap: 0;
+    }
+
+    .brand-name {
+        letter-spacing: 0.12em;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .brand-sub {
+        font-size: 0.42rem;
+        letter-spacing: 0.24em;
+    }
+
+    .nav-shell {
+        position: relative;
+        width: auto;
+        margin-left: auto;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .language-switch {
+        width: 38px;
+        height: 28px;
+        font-size: 0.55rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        width: 42px;
+        height: 36px;
+        z-index: 120;
+    }
+
+    .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 5, 10, 0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 80;
+    }
+
+    .nav-backdrop.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(82vw, 330px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.95rem;
+        padding: 5.5rem 1.4rem 2rem;
+        background: rgba(10, 15, 22, 0.98);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: -18px 0 40px rgba(0, 0, 0, 0.4);
+        transform: translateX(110%);
+        transition: transform 0.28s ease;
+        z-index: 100;
+        letter-spacing: 0.22em;
+    }
+
+    .main-nav.open {
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        color: rgba(246, 240, 234, 0.9);
+    }
+
+    .hero-row,
+    .featured-book-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-row {
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-copy {
+        max-width: none;
+    }
+
+    .hero-art {
+        margin-top: 1rem;
+    }
+
+    .bio-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quote-line {
+        letter-spacing: 0.02em;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .brand-name {
+        font-size: 1.7rem;
+    }
+
+    .brand-sub,
+    .nav-link,
+    .eyebrow,
+    .section-kicker,
+    .poem-tag,
+    .small-label,
+    .book-edition,
+    .contact-note,
+    .copyright,
+    .to-top {
+        letter-spacing: 0.18em;
+    }
+
+    .hero-copy h1 {
+        font-size: 4.2rem;
+    }
+
+    .hero-quote {
+        margin: 1.5rem 0 1.1rem;
+        font-size: 2rem;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cta-row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .book-meta-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .book-meta-list strong {
+        text-align: left;
+    }
+}

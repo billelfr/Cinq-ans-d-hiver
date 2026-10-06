@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Farah Tilmatine — Écrivaine &amp; Poétesse</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cormorant Garamond & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: {
+              950: '#07090E',
+              900: '#090C12',
+              850: '#0D111A',
+              800: '#121722',
+              700: '#1A2130',
+            },
+            parchment: {
+              100: '#FBF9F5',
+              200: '#F5F2EB',
+              300: '#E4DFD5',
+              400: '#C5BFB3',
+            },
+            mist: {
+              DEFAULT: '#8D93A0',
+              faint: 'rgba(141, 147, 160, 0.15)',
+            },
+            crimson: {
+              whisper: '#8F2231',
+              dark: '#581620',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          letterSpacing: {
+            'widest-plus': '0.28em',
+            'ethereal': '0.35em',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography & Atmospheric Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #090C12;
+      color: #E4DFD5;
+      overflow-x: hidden;
+    }
+    .font-literary {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    ::selection {
+      background-color: #8F2231;
+      color: #F5F2EB;
+    }
+  </style>
+<!-- Atmospheric Background & Depth Details -->
+<style data-purpose="atmosphere-effects">
+    .mist-grain {
+      background-image: radial-gradient(circle at 50% 20%, rgba(26, 33, 48, 0.45) 0%, rgba(9, 12, 18, 0.98) 75%);
+    }
+    .book-shadow {
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 45px -10px rgba(143, 34, 49, 0.12);
+    }
+    .soft-divider {
+      background: linear-gradient(90deg, transparent 0%, rgba(228, 223, 213, 0.12) 50%, transparent 100%);
+    }
+  </style>
+</head>
+<body class="bg-midnight-900 text-parchment-300 selection:bg-crimson-whisper selection:text-white antialiased">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-midnight-950/80 backdrop-blur-md border-b border-white/[0.04] transition-all duration-300" data-purpose="site-navigation">
+<div class="max-w-6xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Writer Identity -->
+<a aria-label="Farah Tilmatine Accueil" class="group flex flex-col focus:outline-none" href="#">
+<span class="font-literary text-lg md:text-xl tracking-ethereal text-parchment-200 uppercase group-hover:text-parchment-100 transition-colors">
+          Farah Tilmatine
+        </span>
+<span class="text-[9px] tracking-widest uppercase text-mist/70 font-light mt-0.5">
+          Écrivaine &amp; Poétesse
+        </span>
+</a>
+<!-- Navigation Links -->
+<nav aria-label="Menu principal">
+<ul class="flex items-center gap-7 md:gap-10 text-[11px] md:text-xs uppercase tracking-widest-plus text-mist font-light">
+<li class="">
+<a class="hover:text-parchment-100 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-parchment-300 hover:after:w-full after:transition-all after:duration-300" href="#biographie">
+              Biographie
+            </a>
+</li>
+<li class="">
+<a class="hover:text-parchment-100 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-parchment-300 hover:after:w-full after:transition-all after:duration-300" href="#oeuvre">
+              L'Œuvre
+            </a>
+</li>
+<li class="">
+<a class="hover:text-parchment-100 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-parchment-300 hover:after:w-full after:transition-all after:duration-300" href="#poeme">
+              Poésie
+            </a>
+</li>
+<li class="">
+<a class="hover:text-parchment-100 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-parchment-300 hover:after:w-full after:transition-all after:duration-300" href="#contact">
+              Contact
+            </a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen pt-32 pb-24 flex items-center mist-grain border-b border-white/[0.03]" data-purpose="hero-banner">
+<!-- Atmospheric subtle ambient light spot -->
+<div class="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
+<div class="absolute top-1/4 -right-24 w-96 h-96 rounded-full bg-crimson-whisper/20 blur-[130px]"></div>
+<div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-midnight-700/30 blur-[100px]"></div>
+</div>
+<div class="max-w-6xl mx-auto px-6 lg:px-12 w-full relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Hero Introduction & Epigraph -->
+<div class="lg:col-span-7 flex flex-col space-y-8 text-left">
+<div class="space-y-3">
+<span class="inline-block text-[11px] uppercase tracking-ethereal text-mist/80 font-light">
+              Voix littéraire d’Algérie
+            </span>
+<h1 class="font-literary text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight text-parchment-100 leading-[1.08]">
+              Farah Tilmatine
+            </h1>
+<p class="font-light text-sm md:text-base tracking-widest-plus uppercase text-mist pt-1">
+              Écrivaine &amp; Poétesse
+            </p>
+</div>
+<div class="border-l border-crimson-whisper/40 pl-6 py-2 my-2">
+<blockquote class="font-literary italic text-xl sm:text-2xl text-parchment-200/90 leading-relaxed font-light">
+              « Les mots deviennent parfois des fenêtres vers ce que nous ne savons pas dire. »
+            </blockquote>
+</div>
+<p class="text-sm md:text-base text-parchment-300/70 font-light leading-relaxed max-w-xl">
+            Une écriture introspective née au croisement de la mémoire, du froid persistant et de la beauté silencieuse. À travers ses vers, chaque goutte de pluie devient la mémoire tenace d'un sentiment retrouvé.
+          </p>
+<!-- Call to Action -->
+<div class="pt-4 flex flex-wrap items-center gap-6">
+<a class="px-8 py-3.5 border border-parchment-300/30 text-parchment-200 text-xs tracking-widest uppercase hover:bg-parchment-200/5 hover:border-parchment-200/60 transition-all duration-300 ease-out" href="#oeuvre">
+              Découvrir son univers
+            </a>
+<a class="text-xs uppercase tracking-widest text-mist hover:text-parchment-100 transition-colors duration-200" href="#poeme">
+              Lire un extrait →
+            </a>
+</div>
+</div>
+<!-- Book Visual Showcase -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative group max-w-xs sm:max-w-sm w-full">
+<!-- Book container with refined depth -->
+<div class="relative overflow-hidden rounded-sm p-1.5 bg-gradient-to-b from-white/10 to-white/0 book-shadow transition-transform duration-500 hover:-translate-y-1">
+<!-- Book Artwork using provided Image -->
+<img alt="Cinq ans d'hiver - Tilmatine Farah" class="w-full h-auto object-cover rounded-sm filter brightness-95 contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOLakbReJHTNLI920YtFeylzUcwVPop405tku_KpZ6g-7bfNTQFO6AN2ATW9fS51nMc2UOoqVD1wak-Hrml2ZXlkykpr47gNO_IBeSdZwclrd3EW2L5wXzk1pGZJ-0iYamJwxhpLKseeEXXdn2vzi-1uKyKRQBRVckzSbSihQuhLhvm-ozFHRxach9YgknPfCFUols9gj-3lLRrnVqHdRR1eN6LPfZyZnP7yaruoSEQCCRhKctgjn1cJgEO_66vw0C6cY">
+<!-- Subtle inner glass reflection overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/5 pointer-events-none"></div>
+</div>
+<div class="text-center mt-5">
+<span class="block font-literary italic text-base text-parchment-300">
+                Cinq ans d'hiver
+              </span>
+<span class="block text-[10px] tracking-widest text-mist uppercase font-light mt-0.5">
+                Éditions Inar (ينار)
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-28 relative bg-midnight-900 border-b border-white/[0.03]" data-purpose="author-biography" id="biographie">
+<div class="max-w-4xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="text-center mb-16 space-y-2">
+<span class="text-[10px] uppercase tracking-ethereal text-mist">À propos</span>
+<h2 class="font-literary text-3xl sm:text-4xl text-parchment-100 font-light">
+          La Plume &amp; l'Ombre
+        </h2>
+<div class="w-12 h-[1px] bg-crimson-whisper/60 mx-auto mt-4"></div>
+</div>
+<!-- Literary Biography Narrative -->
+<article class="space-y-8 text-parchment-300/80 font-light text-base md:text-lg leading-relaxed text-justify md:text-left">
+<p class="first-letter:font-literary first-letter:text-5xl first-letter:text-parchment-100 first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+          Née en Algérie, Farah Tilmatine tisse dans le silence des hivers une poésie à la fois intime et universelle. Ses textes explorent la mémoire, la pluie qui tombe sur les vitres brisées, et cette lumière obstinée qui persiste au creux des blessures.
+        </p>
+<p class="">
+          Entre le français et l'écho discret de sa terre natale, son écriture transforme l'ordinaire en instant d'éternité. Farah Tilmatine aborde l'absence non comme un vide irrémédiable, mais comme une présence silencieuse qui réapprend à regarder le monde avec gravité et tendresse.
+        </p>
+<p class="">
+          Ses recueils sont conçus comme des havres mélancoliques, où la rigueur du mot dépouillé côtoie la sensualité de l'émotion pure. Pour l'auteure, écrire est un geste de résistance contre l'oubli : une façon de sculpter l'éclat du ciel dans le gris impérissable des saisons froides.
+        </p>
+</article>
+<!-- Minimal Quote Accolade -->
+<div class="mt-14 pt-10 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between text-xs text-mist gap-4 font-light">
+<span class="tracking-widest uppercase">Littérature contemporaine algérienne</span>
+<span class="font-literary italic text-base text-parchment-300">« Une parole née pour réchauffer la mémoire. »</span>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: WorkSection -->
+<section class="py-28 relative bg-midnight-850" data-purpose="work-presentation" id="oeuvre">
+<div class="max-w-6xl mx-auto px-6 lg:px-12">
+<!-- Section Title -->
+<div class="mb-20 text-center space-y-2">
+<span class="text-[10px] uppercase tracking-ethereal text-mist">Parution</span>
+<h2 class="font-literary text-3xl sm:text-5xl text-parchment-100 font-light">
+          Œuvres &amp; Publications
+        </h2>
+<div class="w-12 h-[1px] bg-crimson-whisper/60 mx-auto mt-4"></div>
+</div>
+<!-- Featured Book Card -->
+<div class="border border-white/[0.05] bg-midnight-900/60 p-8 sm:p-12 lg:p-16 rounded-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Book Image Showcase -->
+<div class="lg:col-span-6 flex justify-center">
+<div class="relative max-w-md w-full shadow-2xl overflow-hidden border border-white/[0.08]">
+<img alt="Présentation complète du recueil Cinq ans d'hiver" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzBgwUbSU9Ztesx3Wp-_moo_tBgFDZZZnGMroqGHpBtMlSOOLJcSvxJTVBz_92KUnwOYKM2v5d-NKD304uS0TJAmwRzumb04Kx1ZMNB-ChiIQ5-8ZDjPuBlU2gKMrtvVWk-dug-tgcbIOJVjcAQ-Vm4Z2jB46I0mkzT_1boiGwYGuD2IN12vS8e_pCVDjU4yqwTXEXARGrpFW8AWl4Rn8hvQJtRCKVjqEpDFigkbqgqYyxur2Daia6QQ">
+</div>
+</div>
+<!-- Book Synopsis & Meta -->
+<div class="lg:col-span-6 space-y-6">
+<div class="space-y-1">
+<span class="text-xs uppercase tracking-widest text-crimson-whisper font-medium">Recueil de poèmes</span>
+<h3 class="font-literary text-3xl sm:text-4xl text-parchment-100">Cinq ans d'hiver</h3>
+<p class="font-literary italic text-lg text-mist">Five Years of Winter</p>
+</div>
+<!-- Back Cover Synopsis Quote -->
+<div class="bg-midnight-950/70 p-6 border-l-2 border-parchment-400/20 my-6">
+<p class="font-literary italic text-base sm:text-lg text-parchment-200/90 leading-relaxed">
+                « Cinq ans d'hiver est une poésie avec un vocabulaire simple mais profond, simple mais qui transforme chaque mot en un instant... Puisque c'est l'harmonie des lettres qui construit un mot. »
+              </p>
+</div>
+<!-- Meta details list -->
+<ul class="space-y-2.5 text-xs text-mist font-light border-y border-white/[0.05] py-4">
+<li class="flex justify-between">
+<span class="uppercase tracking-widest">Auteure</span>
+<span class="text-parchment-300">Tilmatine Farah</span>
+</li>
+<li class="flex justify-between">
+<span class="uppercase tracking-widest">Maison d'édition</span>
+<span class="text-parchment-300">Éditions Inar (دار ينار للنشر والتوزيع والترجمة)</span>
+</li>
+<li class="flex justify-between">
+<span class="uppercase tracking-widest">Genre</span>
+<span class="text-parchment-300">Poésie introspective</span>
+</li>
+<li class="flex justify-between">
+<span class="uppercase tracking-widest">Langue</span>
+<span class="text-parchment-300">Français / Titrage bilingue</span>
+</li>
+</ul>
+<!-- Book Inquiry CTA -->
+<div class="pt-3">
+<a class="inline-flex items-center gap-3 px-8 py-3.5 bg-transparent border border-parchment-300/30 text-xs tracking-widest uppercase text-parchment-200 hover:border-parchment-100 hover:text-white transition-all duration-300" href="#contact">
+<span class="">Renseignements &amp; Commande</span>
+<span class="">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WorkSection -->
+<!-- BEGIN: PoeticQuoteSection -->
+<section class="py-32 relative bg-midnight-950 overflow-hidden text-center" data-purpose="cinematic-poem-quote" id="poeme">
+<!-- Atmospheric subtle water drop / glass mist backdrop -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#8D93A0_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+<div class="soft-divider absolute top-0 left-0 right-0 h-[1px]"></div>
+<div class="max-w-3xl mx-auto px-6 lg:px-12 relative z-10">
+<span class="text-xs uppercase tracking-ethereal text-crimson-whisper mb-6 block font-light">
+        Extrait du recueil
+      </span>
+<!-- Central Verses -->
+<blockquote class="font-literary text-2xl sm:text-3xl md:text-4xl text-parchment-100 leading-relaxed font-normal tracking-wide space-y-3">
+<p class="italic">« Cinq ans d'hiver... cinq ans de pluie...</p>
+<p class="italic">Et il fait toujours beau chez moi,</p>
+<p class="italic">Parce que quand il pleut,</p>
+<p class="italic">Mes sentiments sont là,</p>
+<p class="italic">Me rappelant de moi... et de toi ! »</p>
+</blockquote>
+<!-- Author Attribution -->
+<cite class="not-italic block mt-10 text-xs uppercase tracking-widest-plus text-mist font-light">
+        — Farah Tilmatine, <span class="font-literary italic text-sm text-parchment-300 lowercase font-normal">Cinq ans d'hiver</span>
+</cite>
+</div>
+<div class="soft-divider absolute bottom-0 left-0 right-0 h-[1px]"></div>
+</section>
+<!-- END: PoeticQuoteSection -->
+<!-- BEGIN: ContactSection -->
+<section class="py-24 bg-midnight-900 border-t border-white/[0.02]" data-purpose="contact-correspondence" id="contact">
+<div class="max-w-3xl mx-auto px-6 text-center">
+<span class="text-[10px] uppercase tracking-ethereal text-mist block mb-2">Correspondance</span>
+<h2 class="font-literary text-3xl sm:text-4xl text-parchment-100 font-light mb-6">
+        Écrire à l'auteure
+      </h2>
+<p class="text-sm md:text-base text-parchment-300/70 font-light leading-relaxed max-w-lg mx-auto mb-10">
+        Pour les invitations littéraires, séances de dédicaces, rencontres en librairie ou pour adresser un mot personnel à Farah Tilmatine.
+      </p>
+<!-- Literary Mail Button -->
+<a class="inline-block border-b border-crimson-whisper/80 text-parchment-200 font-literary italic text-xl hover:text-white hover:border-parchment-200 transition-all duration-300 pb-1" href="mailto:contact@farahtilmatine.com">
+        contact@farahtilmatine.com
+      </a>
+<!-- Distribution / Publisher Note -->
+<div class="mt-12 text-xs text-mist/60 font-light tracking-wide">
+        Ouvrage diffusé en collaboration avec les Éditions Inar (ینار)
+      </div>
+</div>
+</section>
+<!-- END: ContactSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-midnight-950 border-t border-white/[0.04] py-12 text-center" data-purpose="site-footer">
+<div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Footer Brand -->
+<div class="flex flex-col md:items-start items-center">
+<span class="font-literary tracking-widest-plus text-sm uppercase text-parchment-200">
+          Farah Tilmatine
+        </span>
+<span class="text-[10px] uppercase tracking-ethereal text-mist mt-0.5">
+          Écrivaine · Poétesse
+        </span>
+</div>
+<!-- Literary Copyright -->
+<div class="text-[11px] text-mist font-light tracking-wider">
+        © <span id="current-year" class="">2026</span> Farah Tilmatine. Tous droits réservés.
+      </div>
+<!-- Quick Back to Top Link -->
+<div>
+<a class="text-[11px] uppercase tracking-widest-plus text-mist hover:text-parchment-200 transition-colors" href="#">
+          Haut de page ↑
+        </a>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- Current Year Script -->
+<script data-purpose="current-year-updater">
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+
+
+
+</body></html>
