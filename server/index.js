@@ -11,7 +11,7 @@ const app = express();
 const port = Number(process.env.PORT || 3001);
 const sessionCookie = 'farah_admin';
 const sessionDurationMs = 8 * 60 * 60 * 1000;
-const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const contentSchema = new mongoose.Schema(
     {
