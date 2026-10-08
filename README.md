@@ -31,4 +31,6 @@ The site remains viewable with its built-in copy before MongoDB is configured, b
 ## Production
 
 Build the frontend with `npm run build`, then run `npm start` on a Node.js host that can reach MongoDB Atlas. Configure the same environment variables in the hosting provider's secret/environment settings. The Express server serves both `dist/` and the API, so deploy the app as a Node service rather than a static-only site. Use HTTPS in production.
+
+For Render, this repository includes `render.yaml`. Create a Blueprint from the repository, then enter `MONGODB_URI`, `ADMIN_PASSWORD`, and `SESSION_SECRET` as private environment values when prompted. The app is at the repository root; do not set the service root directory to `server/`.
 # Cinq-ans-d-hiver
